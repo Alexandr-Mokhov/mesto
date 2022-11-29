@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-size: 10px;
   transition: .5s ease;
+  cursor: pointer;
 }
 
 .profile__edit:hover {

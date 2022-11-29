@@ -5,6 +5,7 @@
   color: #FFF;
   margin: 0 20px 0 0;
   transition: .5s ease;
+  cursor: pointer;
 }
 
 .elements__heart:hover {
