@@ -11,6 +11,7 @@
 @import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__content/profile__content.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__name/profile__name.css);
@@ -27,6 +28,7 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copiring/footer__copiring.css);
-* {
+
+/* {
   outline: 1px solid red;
 }

@@ -3,7 +3,7 @@
   min-height: 120px;
   margin: 0 auto;
   padding: 40px 0 50px;
-  display: grid;
-  grid-template-columns: 120px 1fr 150px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }

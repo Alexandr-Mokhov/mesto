@@ -1,7 +1,7 @@
 .profile__edit {
   position: absolute;
   top: 16px;
-  right: -40px;
+  right: -42px;
   width: 24px;
   height: 24px;
   border: 1px solid #FFF;
@@ -10,5 +10,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 10px;
+  transition: .5s ease;
+}
 
+.profile__edit:hover {
+  opacity: .6;
 }
