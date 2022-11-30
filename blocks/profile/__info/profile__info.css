@@ -2,4 +2,27 @@
   margin-left: 30px;
   position: relative;
   align-self: center;
+  width: 100%;
 }
+
+@media screen and (max-width: 920px) {
+  .profile__info {
+    max-width: calc(100vw - 400px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .profile__info {
+    max-width: calc(100vw - 250px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile__info {
+    max-width: calc(100vw - 120px);
+    width: 100%;
+    margin-left: 0;
+    margin-top: 22px;
+  }
+}
+

@@ -1,87 +1,86 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
-    <title>Место</title>
-  </head>
-  <body class="body">
-    <div class="page">
-      <header class="header">
-        <div class="header__logo"></div>
-        <div class="header__line"></div>
-      </header>
-      <main class="main">
-        <section class="profile">
-          <div class="profile__content">
-            <div class="profile__avatar"></div>
-            <div class="profile__info">
-              <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <p class="profile__profession">Исследователь океана</p>
-              <button class="profile__edit"></button>
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Место</title>
+</head>
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <div class="header__logo"></div>
+      <div class="header__line"></div>
+    </header>
+    <main class="main">
+      <section class="profile">
+        <div class="profile__content">
+          <div class="profile__avatar"></div>
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <p class="profile__profession">Исследователь океана</p>
+            <button class="profile__edit"></button>
           </div>
-          <div class="profile__add-button"></div>
-        </section>
-        <section class="elements">
-          <div class="elements__item">
-            <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото Карачаевск">
-            <div class="elements__mask">
-              <h2 class="elements__name">Карачаевск</h2>
-              <div class="elements__heart"></div>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img class="elements__image" src="./images/elbrus.jpg" alt="Фото Гора Эльбрус">
-            <div class="elements__mask">
-              <h2 class="elements__name">Гора Эльбрус</h2>
-              <div class="elements__heart"></div>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img class="elements__image" src="./images/dombay.jpg" alt="Фото Домбай">
-            <div class="elements__mask">
-              <h2 class="elements__name">Домбай</h2>
-              <div class="elements__heart"></div>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img class="elements__image" src="./images/elbrus.jpg" alt="Фото Гора Эльбрус">
-            <div class="elements__mask">
-              <h2 class="elements__name">Гора Эльбрус</h2>
-              <div class="elements__heart"></div>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img class="elements__image" src="./images/dombay.jpg" alt="Фото Домбай">
-            <div class="elements__mask">
-              <h2 class="elements__name">Домбай</h2>
-              <div class="elements__heart"></div>
-            </div>
-          </div>
-          <div class="elements__item">
-            <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото Карачаевск">
-            <div class="elements__mask">
-              <h2 class="elements__name">Карачаево-Черкесия</h2>
-              <div class="elements__heart"></div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <p class="footer__copiring">&copy; 2022 Mesto Russia Мохов Александр</p>
-      </footer>
-      <div class="popup">
-        <div class="popup__container">
-          <button class="popup__close"></button>
-          <h3 class="popup__title">Редактировать профиль</h3>
-          <input class="popup__name" type="text" placeholder="Жак-Ив Кусто">
-          <input class="popup__profession" type="text" placeholder="Исследователь океана">
-          <button class="popup__save">Сохранить</button>
         </div>
+        <div class="profile__add-button"></div>
+      </section>
+      <!-- <section class="elements">
+        <div class="elements__item">
+          <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото Карачаевск">
+          <div class="elements__mask">
+            <h2 class="elements__name">Карачаевск</h2>
+            <div class="elements__heart"></div>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="./images/elbrus.jpg" alt="Фото Гора Эльбрус">
+          <div class="elements__mask">
+            <h2 class="elements__name">Гора Эльбрус</h2>
+            <div class="elements__heart"></div>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="./images/dombay.jpg" alt="Фото Домбай">
+          <div class="elements__mask">
+            <h2 class="elements__name">Домбай</h2>
+            <div class="elements__heart"></div>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="./images/elbrus.jpg" alt="Фото Гора Эльбрус">
+          <div class="elements__mask">
+            <h2 class="elements__name">Гора Эльбрус</h2>
+            <div class="elements__heart"></div>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="./images/dombay.jpg" alt="Фото Домбай">
+          <div class="elements__mask">
+            <h2 class="elements__name">Домбай</h2>
+            <div class="elements__heart"></div>
+          </div>
+        </div>
+        <div class="elements__item">
+          <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото Карачаевск">
+          <div class="elements__mask">
+            <h2 class="elements__name">Карачаево-Черкесия</h2>
+            <div class="elements__heart"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copiring">&copy; 2022 Mesto Russia Мохов Александр</p>
+    </footer>
+    <div class="popup">
+      <div class="popup__container">
+        <button class="popup__close"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input class="popup__name" type="text" placeholder="Жак-Ив Кусто">
+        <input class="popup__profession" type="text" placeholder="Исследователь океана">
+        <button class="popup__save">Сохранить</button>
       </div>
     </div>
-    <script src="#"></script>
-  </body>
+  </div>  -->
+</body>
 </html>
