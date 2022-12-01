@@ -26,8 +26,8 @@
 
 @media screen and (max-width: 500px) {
   .profile__edit {
-    top: 7px;
-    right: -32px;
+    top: 9px;
+    right: -28px;
     background-size: 10px;
     width: 18px;
     height: 18px;
