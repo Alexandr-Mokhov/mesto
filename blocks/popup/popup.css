@@ -5,16 +5,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0;
-  transition: 0.5s all;
+  opacity: 1;
   pointer-events: none;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
 
-.popup-opened {
-  opacity: 1;
-  transition: 0.5s all;
+.popup_opened {
+  display: flex;
   pointer-events: all;
 }
