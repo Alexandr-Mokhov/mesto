@@ -6,5 +6,27 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  max-width: 500px;
+  max-width: 520px;
+}
+
+@media screen and (max-width: 850px) {
+  .profile__name {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .profile__name {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .profile__name {
+    font-size: 27px;
+    line-height: 33px;
+  }
 }
