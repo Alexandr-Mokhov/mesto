@@ -1,4 +1,12 @@
 .elements__item {
   border-radius: 10px;
   overflow: hidden;
+  width: 282px;
+  height: 361px;
+}
+
+@media screen and (max-width: 920px) {
+  .elements__item {
+    width: 100%;
+  }
 }
