@@ -1,7 +1,8 @@
 .profile__info {
   margin-left: 30px;
-  position: relative;
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (max-width: 920px) {
@@ -18,7 +19,6 @@
 
 @media screen and (max-width: 650px) {
   .profile__info {
-    margin-top: 27px;
     max-width: calc(100vw - 180px);
     margin-left: 0;
   }

@@ -14,56 +14,58 @@
     <main class="main">
       <section class="profile">
         <div class="profile__content">
-          <div class="profile__avatar"></div>
-          <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <p class="profile__profession">Исследователь океана</p>
+          <img class="profile__avatar" src="./images/avatar.jpg" alt="Фото владельца страницы">
+          <div class="profile__container">
+            <div class="profile__info">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <p class="profile__profession">Исследователь океана</p>
+            </div>
             <button class="profile__edit"></button>
           </div>
         </div>
-        <div class="profile__add-button"></div>
+        <button class="profile__add-button"></button>
       </section>
       <section class="elements">
         <div class="elements__item">
           <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото Карачаевск">
           <div class="elements__mask">
             <h2 class="elements__name">Карачаевск</h2>
-            <div class="elements__heart"></div>
+            <button class="elements__heart"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/elbrus.jpg" alt="Фото Гора Эльбрус">
           <div class="elements__mask">
             <h2 class="elements__name">Гора Эльбрус</h2>
-            <div class="elements__heart"></div>
+            <button class="elements__heart"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/dombay.jpg" alt="Фото Домбай">
           <div class="elements__mask">
             <h2 class="elements__name">Домбай</h2>
-            <div class="elements__heart"></div>
+            <button class="elements__heart"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/baykal.jpg" alt="Фото Байкал">
           <div class="elements__mask">
             <h2 class="elements__name">Байкал</h2>
-            <div class="elements__heart"></div>
+            <button class="elements__heart"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/kamchatskiy-kray.jpg" alt="Фото Камчатский край">
           <div class="elements__mask">
             <h2 class="elements__name">Камчатский край</h2>
-            <div class="elements__heart"></div>
+            <button class="elements__heart"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/taganay.png" alt="Фото Таганай">
           <div class="elements__mask">
             <h2 class="elements__name">Таганай</h2>
-            <div class="elements__heart"></div>
+            <button class="elements__heart"></button>
           </div>
         </div>
       </section>
@@ -72,13 +74,13 @@
       <p class="footer__copiring">&copy; 2022 Mesto Russia Мохов&nbsp;Александр</p>
     </footer>
     <div class="popup">
-      <div class="popup__container">
+      <form class="popup__container">
         <button class="popup__close"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__name" type="text" placeholder="Жак-Ив Кусто" value="">
-        <input class="popup__profession" type="text" placeholder="Исследователь океана" value="">
+        <input class="popup__input popup__input_type_name" name="input-name" type="text" placeholder="Ваше имя">
+        <input class="popup__input popup__input_type_profession" name="input-profession" type="text" placeholder="Ваша деятельность">
         <button class="popup__save" type="submit">Сохранить</button>
-      </div>
+      </form>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

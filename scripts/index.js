@@ -1,30 +1,30 @@
-const profileEdit = document.querySelector('.profile__edit');
-let popup = document.querySelector('.popup');
-const popupClose = popup.querySelector('.popup__close');
-
-profileEdit.addEventListener('click', function() {
-  popup.classList.add('popup_opened');
-});
-
-popupClose.addEventListener('click', function() {
-  popup.classList.remove('popup_opened');
-});
-
+let profileEdit = document.querySelector('.profile__edit');
 let profileName = document.querySelector('.profile__name');
 let profileProfession = document.querySelector('.profile__profession');
-let popupSave = document.querySelector('.popup__save');
+let popup = document.querySelector('.popup');
+let popupForm = popup.querySelector('.popup__container');
+let popupCloseButton = popup.querySelector('.popup__close');
+let popupSaveButton = popup.querySelector('.popup__save');
+let inputName = popup.querySelector('.popup__input_type_name');
+let inputProfession = popup.querySelector('.popup__input_type_profession');
 
-function handleFormSubmit (evt) {
-    evt.preventDefault();
-
-    let popupName = document.querySelector('.popup__name');
-    let popupProfession = document.querySelector('.popup__profession');
-
-    profileName.textContent = popupName.value;
-    profileProfession.textContent = popupProfession.value;
-
-    popup.classList.remove('popup_opened');
+function popupOpened () {
+  popup.classList.add('popup_opened');
+  inputName.value = profileName.textContent;
+  inputProfession.value = profileProfession.textContent;
 }
 
-popupSave.addEventListener('click', handleFormSubmit);
+function popupClose () {
+  popup.classList.remove('popup_opened');
+}
 
+function handleFormSubmit (evt) {
+  evt.preventDefault();
+  profileName.textContent = inputName.value;
+  profileProfession.textContent = inputProfession.value;
+  popup.classList.remove('popup_opened');
+}
+
+profileEdit.addEventListener('click', popupOpened);
+popupCloseButton.addEventListener('click', popupClose);
+popupForm.addEventListener('submit', handleFormSubmit);

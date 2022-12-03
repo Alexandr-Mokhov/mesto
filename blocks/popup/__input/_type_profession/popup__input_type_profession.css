@@ -1,0 +1,7 @@
+.popup__input_type_profession {
+  margin-top: 17px;
+}
+
+.popup__input_type_profession::placeholder {
+  color: #000;
+}

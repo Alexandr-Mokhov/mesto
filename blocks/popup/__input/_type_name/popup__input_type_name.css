@@ -1,0 +1,13 @@
+.popup__input_type_name {
+  margin-top: 34px;
+}
+
+.popup__input_type_name::placeholder {
+  color: #000;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__input_type_name {
+    margin-top: 62px;
+  }
+}
