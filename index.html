@@ -20,52 +20,52 @@
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <p class="profile__profession">Исследователь океана</p>
             </div>
-            <button class="profile__edit"></button>
+            <button class="profile__edit" type="button"></button><!-- пардон, про типы кнопок не заметил -->
           </div>
         </div>
-        <button class="profile__add-button"></button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section class="elements">
         <div class="elements__item">
           <img class="elements__image" src="./images/karachaevsk.jpg" alt="Фото Карачаевск">
           <div class="elements__mask">
             <h2 class="elements__name">Карачаевск</h2>
-            <button class="elements__heart"></button>
+            <button class="elements__heart" type="button"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/elbrus.jpg" alt="Фото Гора Эльбрус">
           <div class="elements__mask">
             <h2 class="elements__name">Гора Эльбрус</h2>
-            <button class="elements__heart"></button>
+            <button class="elements__heart" type="button"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/dombay.jpg" alt="Фото Домбай">
           <div class="elements__mask">
             <h2 class="elements__name">Домбай</h2>
-            <button class="elements__heart"></button>
+            <button class="elements__heart" type="button"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/baykal.jpg" alt="Фото Байкал">
           <div class="elements__mask">
             <h2 class="elements__name">Байкал</h2>
-            <button class="elements__heart"></button>
+            <button class="elements__heart" type="button"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/kamchatskiy-kray.jpg" alt="Фото Камчатский край">
           <div class="elements__mask">
             <h2 class="elements__name">Камчатский край</h2>
-            <button class="elements__heart"></button>
+            <button class="elements__heart" type="button"></button>
           </div>
         </div>
         <div class="elements__item">
           <img class="elements__image" src="./images/taganay.png" alt="Фото Таганай">
           <div class="elements__mask">
             <h2 class="elements__name">Таганай</h2>
-            <button class="elements__heart"></button>
+            <button class="elements__heart" type="button"></button>
           </div>
         </div>
       </section>
@@ -73,14 +73,16 @@
     <footer class="footer">
       <p class="footer__copiring">&copy; 2022 Mesto Russia Мохов&nbsp;Александр</p>
     </footer>
-    <div class="popup">
-      <form class="popup__container">
-        <button class="popup__close"></button>
-        <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__input popup__input_type_name" name="input-name" type="text" placeholder="Ваше имя">
-        <input class="popup__input popup__input_type_profession" name="input-profession" type="text" placeholder="Ваша деятельность">
-        <button class="popup__save" type="submit">Сохранить</button>
-      </form>
+    <div class="popup">   <!-- понял что кнопка close должна быть не в форме, но по описанию замечания и примеру сложилось двоякое понимание -->
+      <div class="popup__container">    <!-- кнопка должна быть в popup равнозначным элементом как popup__container -->
+        <button class="popup__close" type="button"></button> <!-- или должна находиться в контейнере, как в примере -->
+        <form class="form">
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <input class="popup__input popup__input_type_name" name="input-name" type="text" placeholder="Ваше имя">
+          <input class="popup__input popup__input_type_profession" name="input-profession" type="text" placeholder="О себе">
+          <button class="popup__save" type="submit">Сохранить</button>
+        </form>
+      </div>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

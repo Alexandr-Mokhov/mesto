@@ -8,4 +8,16 @@
   border: none;
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 17px;
+  padding: 0;
+}
+
+.popup__input:first-of-type {
+  margin-top: 34px;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__input:first-of-type {
+    margin-top: 62px;
+  }
 }
