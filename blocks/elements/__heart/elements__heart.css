@@ -8,6 +8,7 @@
   cursor: pointer;
   border: 0;
   background-color: #FFF;
+  padding: 0;
 }
 
 .elements__heart:hover {

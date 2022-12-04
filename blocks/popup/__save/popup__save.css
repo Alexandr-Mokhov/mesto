@@ -11,7 +11,7 @@
   border-radius: 2px;
   transition: 0.5s ease;
   border: none;
-  outline: none;
+  padding: 0;
 }
 
 .popup__save:hover {
