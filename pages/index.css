@@ -25,6 +25,7 @@
 @import url(../blocks/elements/__mask/elements__mask.css);
 @import url(../blocks/elements/__name/elements__name.css);
 @import url(../blocks/elements/__heart/elements__heart.css);
+@import url(../blocks/elements/__cards/elements__cards.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copiring/footer__copiring.css);
@@ -36,4 +37,6 @@
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__save/popup__save.css);
 
-
+* {
+    outline: 1px solid red;
+}
