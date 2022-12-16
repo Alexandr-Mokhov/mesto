@@ -3,8 +3,8 @@ const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
 
 const popupProfile = document.querySelector('.popup_profile');
-const popupContainerProfile = document.querySelector('.popup__container_profile');
-const buttonCloseProfile = document.querySelector('.popup__close_profile');
+const popupContainerProfile = document.querySelector('.popup__container_type_profile');
+const buttonCloseProfile = document.querySelector('.popup__close_type_profile');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputProfession = document.querySelector('.popup__input_type_profession');
 
@@ -13,16 +13,18 @@ const template = document.querySelector('#elements__item-template');
 
 const buttonAddCard = document.querySelector('.profile__add-button');
 const popupCard = document.querySelector('.popup_card');
-const popupContainerCard = popupCard.querySelector('.popup__container_card');
-const buttonCloseCard = popupCard.querySelector('.popup__close_card');
+const popupContainerCard = popupCard.querySelector('.popup__container_type_card');
+const buttonCloseCard = popupCard.querySelector('.popup__close_type_card');
 const inputCardName = popupCard.querySelector('.popup__input_type_card-name');
 const inputCardLink = popupCard.querySelector('.popup__input_type_card-link');
 
 const popupImage = document.querySelector('.popup_image');
-const popupContainerImage = popupImage.querySelector('.popup__container_image');
-const buttonCloseImage = popupImage.querySelector('.popup__close_image');
+const popupContainerImage = popupImage.querySelector('.popup__container_type_image');
+const buttonCloseImage = popupImage.querySelector('.popup__close_type_image');
 const imagePopup = popupImage.querySelector('.popup__image');
-const popupTitleImage = popupImage.querySelector('.popup__title_image');
+const popupTitleImage = popupImage.querySelector('.popup__title_type_image');
+
+const formCard = document.querySelector('.form_card');
 
 // добавляем картинки через темплейт
 const createCard = (cardName) => {
@@ -39,15 +41,14 @@ const createCard = (cardName) => {
   // открыть просмотр карточек
   elementsImage.addEventListener('click', function() {
     openPopup(popupImage);
-    popupContainerImage.classList.remove('popup__container');
     imagePopup.setAttribute('src', cardName.link);
+    imagePopup.setAttribute('alt', cardName.name);
     popupTitleImage.textContent = cardName.name;
-    popupTitleImage.classList.remove('popup__title');
   });
 
   // лайки
   elementsHeart.addEventListener('click', function() {
-    elementsHeart.classList.toggle('elements__heart_active');
+    elementsHeart.classList.toggle('elements__heart_type_active');
   });
 
   // удаление картинок
@@ -88,11 +89,15 @@ buttonCloseProfile.addEventListener('click', function() {
   closePopup(popupProfile);
 });
 
+// остчистка формы
+function resetForm() {
+  formCard.reset();
+}
+
 // открыть добавление карточек
 buttonAddCard.addEventListener('click', function() {
   openPopup(popupCard);
-  inputCardName.value = "";
-  inputCardLink.value = "";
+  resetForm();
 });
 
 // закрыть добавление карточек
@@ -111,12 +116,11 @@ function handleFormSubmit (evt) {
 // сохранение новых карточек
 function handleCardSubmit (evt) {
   evt.preventDefault();
-  let newObject = {
+  const card = {
     name: inputCardName.value,
     link: inputCardLink.value
   };
-  initialCards.push(newObject);
-  renderCard(newObject);
+  renderCard(card);
   closePopup(popupCard);
 }
 
