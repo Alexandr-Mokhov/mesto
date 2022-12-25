@@ -1,13 +1,3 @@
-const validationConfiguration = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save',
-  inactiveButtonClass: 'popup__save_type_inactive',
-  activeButtonClass: 'popup__save_type_active',
-  errorClassInput: 'popup__input_type_error',
-  errorClassSpan: 'popup__input-error_active',
-};
-
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(config.errorClassInput);
@@ -30,14 +20,14 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 }
 
-const hasInvalidInput = (inputList) => {
+const checkInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 }
 
 const toggleButtonState = (inputList, buttonElement, config) => {
-  if (hasInvalidInput(inputList)) {
+  if (checkInvalidInput(inputList)) {
     buttonElement.classList.add(config.inactiveButtonClass);
     buttonElement.classList.remove(config.activeButtonClass);
   } else {
@@ -46,11 +36,22 @@ const toggleButtonState = (inputList, buttonElement, config) => {
   }
 }
 
+//дезактивирую кнопку сохранения картинки для повторного добавления
+function disableSubmitButton(buttonElement, config) {
+  buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.classList.remove(config.activeButtonClass);
+}
+
+//активирую кнопку сохранения профиля при первом пуске
+function enableSubmitButton(buttonElement, config) {
+  buttonElement.classList.remove(config.inactiveButtonClass);
+  buttonElement.classList.add(config.activeButtonClass);
+}
+
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
-  disableSubmitButton();
-  enableSubmitButton();
+  enableSubmitButton(buttonElement, config)
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement, config);
@@ -66,20 +67,3 @@ const enableValidation = (config) => {
   });
 }
 
-enableValidation(validationConfiguration);
-
-//дезактивирую кнопку сохранения картинки
-function disableSubmitButton() {
-  const buttonCard = document.querySelector('.popup__save_type_card');
-  buttonCard.classList.add('popup__save_type_inactive');
-  buttonCard.classList.remove('popup__save_type_active');
-}
-
-//активирую кнопку сохранения профиля при первом пуске
-function enableSubmitButton() {
-  const buttonProfile = document.querySelector('.popup__save_type_profile');
-  buttonProfile.classList.remove('popup__save_type_inactive');
-  buttonProfile.classList.add('popup__save_type_active');
-}
-
-document.querySelector('.popup__save_type_card').addEventListener('click', disableSubmitButton);
