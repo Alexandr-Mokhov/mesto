@@ -1,18 +1,21 @@
-const showInputError = (formElement, inputElement, errorMessage, config) => {
+// показать сообщение об ошибке
+function showInputError(formElement, inputElement, errorMessage, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(config.errorClassInput);
   errorElement.classList.add(config.errorClassSpan);
   errorElement.textContent = errorMessage;
 }
 
-const hideInputError = (formElement, inputElement, config) => {
+// скрыть сообщение об ошибке
+function hideInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(config.errorClassInput);
   errorElement.classList.remove(config.errorClassSpan);
   errorElement.textContent = '';
 }
 
-const checkInputValidity = (formElement, inputElement, config) => {
+// вкл/выкл отображения сообщение об ошибке исходя из валидности
+function checkInputValidity(formElement, inputElement, config) {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else {
@@ -20,38 +23,38 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 }
 
-const checkInvalidInput = (inputList) => {
+// проверка на валидность
+function checkInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 }
 
-const toggleButtonState = (inputList, buttonElement, config) => {
-  if (checkInvalidInput(inputList)) {
-    buttonElement.classList.add(config.inactiveButtonClass);
-    buttonElement.classList.remove(config.activeButtonClass);
-  } else {
-    buttonElement.classList.remove(config.inactiveButtonClass);
-    buttonElement.classList.add(config.activeButtonClass);
-  }
-}
-
-//дезактивирую кнопку сохранения картинки для повторного добавления
+//дезактивация кнопок сохранения попапов
 function disableSubmitButton(buttonElement, config) {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.classList.remove(config.activeButtonClass);
 }
 
-//активирую кнопку сохранения профиля при первом пуске
+//активация кнопок сохранения попапов
 function enableSubmitButton(buttonElement, config) {
   buttonElement.classList.remove(config.inactiveButtonClass);
   buttonElement.classList.add(config.activeButtonClass);
 }
 
-const setEventListeners = (formElement, config) => {
+// изменение вида и функциональности кнопки в зависимости от валидности
+function toggleButtonState(inputList, buttonElement, config) {
+  if (checkInvalidInput(inputList)) {
+    disableSubmitButton(buttonElement, config);
+  } else {
+    enableSubmitButton(buttonElement, config);
+  }
+}
+
+// находим все инпуты и кнопки, выставляем слушатели с проверкой валидации ввода и переключения вида кнопки
+function setEventListeners(formElement, config) {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
-  enableSubmitButton(buttonElement, config)
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       checkInputValidity(formElement, inputElement, config);
@@ -60,7 +63,8 @@ const setEventListeners = (formElement, config) => {
   });
 }
 
-const enableValidation = (config) => {
+// находим формы передаем в set
+function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
     setEventListeners(formElement, config);
