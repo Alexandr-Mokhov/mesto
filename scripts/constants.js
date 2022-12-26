@@ -24,3 +24,16 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save',
+  inactiveButtonClass: 'popup__save_type_inactive',
+  activeButtonClass: 'popup__save_type_active',
+  errorClassInput: 'popup__input_type_error',
+  errorClassSpan: 'popup__input-error_active',
+  inactiveSaveCard: 'popup__save_type_card',
+  buttonCard: 'profile__add-button',
+};
+
