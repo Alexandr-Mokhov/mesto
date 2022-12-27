@@ -70,7 +70,7 @@ initialCards.forEach((cardName) => {
   renderCard(cardName);
 });
 
-//закрытие попап на Esc
+// закрытие попап на Esc
 function closePopupEsc(evt) {
   const popup = document.querySelector('.popup_opened');
   if (evt.key === keyEscape) {
@@ -79,7 +79,7 @@ function closePopupEsc(evt) {
   }
 }
 
-//закрытие попап на Overlay
+// закрытие попап на Overlay
 popupList.forEach((popup) => {
   popup.addEventListener('mousedown', function (evt) {
     if (evt.target.classList.contains('popup_opened')) {
@@ -147,5 +147,4 @@ popupContainerCard.addEventListener('submit', (evt) => {
 // закрыть просмотр карточек
   buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
 
-enableValidation(validationConfig);
 

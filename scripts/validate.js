@@ -30,13 +30,13 @@ function checkInvalidInput(inputList) {
   });
 }
 
-//дезактивация кнопок сохранения попапов
+// дезактивация кнопок сохранения попапов
 function disableSubmitButton(buttonElement, config) {
   buttonElement.classList.add(config.inactiveButtonClass);
   buttonElement.classList.remove(config.activeButtonClass);
 }
 
-//активация кнопок сохранения попапов
+// активация кнопок сохранения попапов
 function enableSubmitButton(buttonElement, config) {
   buttonElement.classList.remove(config.inactiveButtonClass);
   buttonElement.classList.add(config.activeButtonClass);
@@ -71,3 +71,4 @@ function enableValidation(config) {
   });
 }
 
+enableValidation(validationConfig);
